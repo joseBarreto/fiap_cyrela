@@ -35,6 +35,15 @@ namespace CyrelaServices.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        [Route("Ocorrencia")]
+        public IActionResult OcorrenciaInsert([FromBody]Model.Ocorrencia ocorrencia)
+        {
+            _cyrelaServicesContext.Ocorrencia.Add(ocorrencia);
+            _cyrelaServicesContext.SaveChanges();
+            return Ok();
+        }
+
         [HttpGet]
         [Route("Assistencia")]
         public IActionResult AssistenciaGetAll()
@@ -45,7 +54,71 @@ namespace CyrelaServices.Controllers
 
             return Ok(assistencias);
         }
-       
+
+        [HttpGet]
+        [Route("Assistenciabyid")]
+        public IActionResult AssistenciaGetById(int id)
+        {
+            var assistencias = _cyrelaServicesContext.Assistencia
+                .Where(x => x.Id == id)
+                .FirstOrDefault();
+
+            return Ok(assistencias);
+        }
+
+        [HttpDelete]
+        [Route("Ocorrencia")]
+        public IActionResult DeleteOcorrencia([FromBody]Model.Ocorrencia ocorrencia)
+        {
+      
+            try
+            {
+                _cyrelaServicesContext.Ocorrencia.Remove(ocorrencia);
+                _cyrelaServicesContext.SaveChanges();
+
+                return Ok($"Item: {ocorrencia.TicketNumber} excluido com sucesso");
+            }
+            catch (Exception)
+            {
+                return NotFound("Item inexistente");
+            }
+            
+        }
+
+        [HttpPut]
+        [Route("Ocorrencia")]
+        public IActionResult AlterarOcorrencia([FromBody]Model.Ocorrencia ocorrencia)
+        {
+            try
+            {
+                _cyrelaServicesContext.Ocorrencia.Update(ocorrencia);
+                _cyrelaServicesContext.SaveChanges();
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpGet]
+        [Route("Ocorrencia")]
+        public IActionResult OcorrenciaGetAll()
+        {
+            try
+            {
+                var ocorrencias = _cyrelaServicesContext.Ocorrencia
+                .OrderBy(x => x.TicketNumber)
+                .ToList();
+
+                return Ok(ocorrencias);
+            }
+            catch (Exception)
+            {
+                return Ok("Objeto inexistente");
+            }
+        }
+
         [HttpGet]
         [Route("Perfil")]
         public IActionResult GetPerfil()
