@@ -16,31 +16,34 @@ namespace CyrelaServices.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
+        
         private readonly ILogger<WeatherForecastController> _logger;
-
+        private readonly DAL.Context.CyrelaServicesContext _cyrelaServicesContext;
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
-        }
+            _cyrelaServicesContext = new DAL.Context.CyrelaServicesContext();
 
-        [HttpGet]
-        public IActionResult Get(int idUsuario, string novoNome)
-        {
-            var ocorrencia = new Ocorrencia() { Description = "0" };
-
-            return Ok($"idUsuario: {idUsuario} | novoNome: {novoNome}");
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] WeatherForecast weatherForecast) {
-            weatherForecast.Date = DateTime.MaxValue;
+        [Route("Assistencia")]
+        public IActionResult AssistenciaInsert([FromBody]Model.Assistencia assistencia)
+        {            
+            _cyrelaServicesContext.Assistencia.Add(assistencia);
+            _cyrelaServicesContext.SaveChanges();
+            return Ok();
+        }
 
-            return Ok(weatherForecast);
+        [HttpGet]
+        [Route("Assistencia")]
+        public IActionResult AssistenciaGetAll()
+        {
+            var assistencias = _cyrelaServicesContext.Assistencia
+                .OrderByDescending(x => x.Subject)
+                .ToList();
+
+            return Ok(assistencias);
         }
        
         [HttpGet]
@@ -73,20 +76,6 @@ namespace CyrelaServices.Controllers
             Reader.Close();
 
             return Ok(stringBuilder.ToString());
-        }
-
-        [HttpGet]
-        [Route("Andre")]
-        public IEnumerable<WeatherForecast> Andre()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
         }
     }
 }

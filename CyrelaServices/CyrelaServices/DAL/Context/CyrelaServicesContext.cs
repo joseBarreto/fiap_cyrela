@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CyrelaServices.Model;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace CyrelaServices.DAL.Context
 {
     public class CyrelaServicesContext : DbContext
     {
+        public DbSet<Assistencia> Assistencia { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
