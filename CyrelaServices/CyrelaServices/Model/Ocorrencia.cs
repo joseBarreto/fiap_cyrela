@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CyrelaServices.Model
 {
 
+    /// <summary>
+    /// Ocorrencia
+    /// </summary>
     [Table("T_CYRELA_OCORRENCIA")]
     public class Ocorrencia
-
     {
-        public Ocorrencia() { }
-        public Ocorrencia(int id)
-        {
-            TicketNumber = id;
-        }
 
         /// <summary>
         /// Numero da Ocorrencia
@@ -24,29 +18,33 @@ namespace CyrelaServices.Model
         [Key]
         [Column("ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int TicketNumber { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Cliente da Unidade
         /// </summary>
         [Column("PJOCLIENTEDAUNIDADE")]
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         public int PjoClientedaunidade { get; set; }
 
         /// <summary>
         /// Empreendimento
         /// </summary>
         [Column("PJOEMPREENDIMENTOID")]
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         public int PjoEmpreendimentoid { get; set; }
 
         /// <summary>
         /// Bloco
         /// </summary>
         [Column("PJOBLOCO")]
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         public int PjoBloco { get; set; }
 
         /// <summary>
         /// Unidade
         /// </summary>
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         [Column("PJOUNIDADE")]
         public int PjoUnidade { get; set; }
 
@@ -54,6 +52,7 @@ namespace CyrelaServices.Model
         /// Bandeira
         /// </summary>
         [Column("PJOBANDEIRA")]
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         public int PjoBandeira { get; set; }
 
         /// <summary>

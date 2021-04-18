@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CyrelaServices.Model
 {
+    /// <summary>
+    /// Assistencia
+    /// </summary>
     [Table("T_CYRELA_ASSISTENCIA")]
     public class Assistencia
     {
+        /// <summary>
+        /// Identificador
+        /// </summary>
         [Key]
         [Column("ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -24,13 +27,14 @@ namespace CyrelaServices.Model
         /// <summary>
         /// Data de termino
         /// </summary>
-        [Column("ACTUALEND")]
+        [Column("ACTUALEND")]        
         public DateTime Actualend { get; set; }
 
         /// <summary>
         /// Tipo de atividade
         /// </summary>
         [Column("PJOTIPODEATIVIDADE")]
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         public int PjoTipodeAtividade { get; set; }
 
         /// <summary>
@@ -43,18 +47,21 @@ namespace CyrelaServices.Model
         /// Id do empreendimento 
         /// </summary>
         [Column("PJOEMPREENDIMENTOID")]
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         public int PjoEmpreendimentoId { get; set; }
 
         /// <summary>
         /// Id do Bbloco
         /// </summary>
         [Column("PJOBLOCOID")]
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         public int PjoBlocoId { get; set; }
 
         /// <summary>
         /// Id da unidade
         /// </summary>
         [Column("PJOUNIDADEID")]
+        [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]
         public int PjoUnidadeId { get; set; }
 
     }

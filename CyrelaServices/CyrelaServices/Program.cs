@@ -1,16 +1,14 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CyrelaServices
 {
+#pragma warning disable CS1591
+
     public class Program
     {
+        protected Program() { }
+
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
@@ -23,4 +21,6 @@ namespace CyrelaServices
                     webBuilder.UseStartup<Startup>();
                 });
     }
+#pragma warning restore CS1591
+
 }
