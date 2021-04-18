@@ -8,15 +8,8 @@ namespace CyrelaServices.Model
     /// Assistencia
     /// </summary>
     [Table("T_CYRELA_ASSISTENCIA")]
-    public class Assistencia
+    public class Assistencia : BaseEntity
     {
-        /// <summary>
-        /// Identificador
-        /// </summary>
-        [Key]
-        [Column("ID")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
 
         /// <summary>
         /// Data de inicio

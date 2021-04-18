@@ -9,16 +9,8 @@ namespace CyrelaServices.Model
     /// Ocorrencia
     /// </summary>
     [Table("T_CYRELA_OCORRENCIA")]
-    public class Ocorrencia
+    public class Ocorrencia : BaseEntity
     {
-
-        /// <summary>
-        /// Numero da Ocorrencia
-        /// </summary>        
-        [Key]
-        [Column("ID")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
 
         /// <summary>
         /// Cliente da Unidade

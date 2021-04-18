@@ -10,7 +10,7 @@ namespace CyrelaServices.Model.Helpers
     /// Paginação padrão
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class PaginatedList<T>
+    public class PaginatedList<T>  where T : BaseEntity
     {
         /// <summary>
         /// Pagina atual
@@ -80,6 +80,7 @@ namespace CyrelaServices.Model.Helpers
         {
             var count = await source.CountAsync();
             var items = await source                
+                .OrderBy(x => x.Id)
                 .Skip((baseParametersPagination.PageIndex - 1) * baseParametersPagination.PageSize)
                 .Take(baseParametersPagination.PageSize)
                 .ToListAsync();
