@@ -20,7 +20,7 @@ namespace CyrelaServices.Model
         /// <summary>
         /// Data de termino
         /// </summary>
-        [Column("ACTUALEND")]        
+        [Column("ACTUALEND")]
         public DateTime Actualend { get; set; }
 
         /// <summary>

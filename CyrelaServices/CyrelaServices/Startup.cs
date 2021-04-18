@@ -13,7 +13,7 @@ using System.Reflection;
 namespace CyrelaServices
 {
 #pragma warning disable CS1591
-    
+
     public class Startup
     {
         public Startup(IConfiguration configuration)

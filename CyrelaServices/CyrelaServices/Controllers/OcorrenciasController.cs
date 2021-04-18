@@ -1,10 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using CyrelaServices.DAL.Context;
+using CyrelaServices.Model;
+using CyrelaServices.Model.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CyrelaServices.DAL.Context;
-using CyrelaServices.Model;
 using Swashbuckle.AspNetCore.Annotations;
-using CyrelaServices.Model.Helpers;
+using System.Threading.Tasks;
 
 namespace CyrelaServices.Controllers
 {
@@ -124,6 +124,6 @@ namespace CyrelaServices.Controllers
             _context.SaveChanges();
             return Ok();
         }
-      
+
     }
 }
