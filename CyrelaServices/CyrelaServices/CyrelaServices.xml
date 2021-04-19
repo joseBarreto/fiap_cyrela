@@ -6,7 +6,7 @@
     <members>
         <member name="T:CyrelaServices.Controllers.AssistenciasController">
             <summary>
-            Assistencias
+            Assistências
             </summary>
         </member>
         <member name="M:CyrelaServices.Controllers.AssistenciasController.#ctor(CyrelaServices.DAL.Context.CyrelaServicesContext)">
@@ -19,7 +19,7 @@
             <summary>
             Retorna todos os registros paginados
             </summary>
-            <param name="baseParametersPagination">Parametros da paginação: PageSize; PageIndex</param>
+            <param name="baseParametersPagination">Parâmetros da paginação: PageSize; PageIndex</param>
             <returns></returns>
         </member>
         <member name="M:CyrelaServices.Controllers.AssistenciasController.GetById(System.Int32)">
@@ -52,7 +52,7 @@
         </member>
         <member name="T:CyrelaServices.Controllers.OcorrenciasController">
             <summary>
-            Ocorrencias
+            Ocorrências
             </summary>
         </member>
         <member name="M:CyrelaServices.Controllers.OcorrenciasController.#ctor(CyrelaServices.DAL.Context.CyrelaServicesContext)">
@@ -65,7 +65,7 @@
             <summary>
             Retorna todos os registros paginados
             </summary>
-            <param name="baseParametersPagination">Parametros da paginação: PageSize; PageIndex</param>
+            <param name="baseParametersPagination">Parâmetros da paginação: PageSize; PageIndex</param>
             <returns></returns>
         </member>
         <member name="M:CyrelaServices.Controllers.OcorrenciasController.GetById(System.Int32)">
@@ -119,7 +119,7 @@
         </member>
         <member name="T:CyrelaServices.Model.Assistencia">
             <summary>
-            Assistencia
+            Assistência
             </summary>
         </member>
         <member name="P:CyrelaServices.Model.Assistencia.Actualstart">
@@ -149,7 +149,7 @@
         </member>
         <member name="P:CyrelaServices.Model.Assistencia.PjoBlocoId">
             <summary>
-            Id do Bbloco
+            Id do Bloco
             </summary>
         </member>
         <member name="P:CyrelaServices.Model.Assistencia.PjoUnidadeId">
@@ -169,7 +169,7 @@
         </member>
         <member name="T:CyrelaServices.Model.Helpers.BaseParametersPagination">
             <summary>
-            Parametros da paginação
+            Parâmetros da paginação
             </summary>
         </member>
         <member name="F:CyrelaServices.Model.Helpers.BaseParametersPagination.MaxPageSize">
@@ -227,9 +227,9 @@
             <summary>
             Cria uma paginação padrão
             </summary>
-            <param name="items">Lista de objs a serem paginados</param>
+            <param name="items">Lista de objetos a serem paginados</param>
             <param name="count">Total de registros</param>
-            <param name="pageIndex">Indice da pagina atual</param>
+            <param name="pageIndex">Índice da pagina atual</param>
             <param name="pageSize">Tamanho das paginas</param>
         </member>
         <member name="M:CyrelaServices.Model.Helpers.PaginatedList`1.CreateAsync(System.Linq.IQueryable{`0},CyrelaServices.Model.Helpers.BaseParametersPagination)">
@@ -237,12 +237,12 @@
             Cria uma nova paginação a partir de um IQuerable
             </summary>
             <param name="source">Consulta a ser realizada</param>
-            <param name="baseParametersPagination">Parametros da paginação: PageSize; PageIndex</param>
+            <param name="baseParametersPagination">Parâmetros da paginação: PageSize; PageIndex</param>
             <returns></returns>
         </member>
         <member name="T:CyrelaServices.Model.Ocorrencia">
             <summary>
-            Ocorrencia
+            Ocorrência
             </summary>
         </member>
         <member name="P:CyrelaServices.Model.Ocorrencia.PjoClientedaunidade">

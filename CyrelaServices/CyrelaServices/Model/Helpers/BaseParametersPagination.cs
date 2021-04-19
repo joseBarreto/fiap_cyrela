@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace CyrelaServices.Model.Helpers
 {
     /// <summary>
-    /// Parametros da paginação
+    /// Parâmetros da paginação
     /// </summary>
     public class BaseParametersPagination
     {

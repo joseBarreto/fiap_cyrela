@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Projetos\FIAP\fiap_cyrela\CyrelaServices\CyrelaServices\CyrelaServices.xml</DocumentationFile>
+    <DocumentationFile>C:\Users\josepaula\Documents\Projetos\Fiap\fiap_cyrela\CyrelaServices\CyrelaServices\CyrelaServices.xml</DocumentationFile>
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>

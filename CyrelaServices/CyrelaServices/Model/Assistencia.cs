@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CyrelaServices.Model
 {
     /// <summary>
-    /// Assistencia
+    /// Assistência
     /// </summary>
     [Table("T_CYRELA_ASSISTENCIA")]
     public class Assistencia : BaseEntity
@@ -44,7 +44,7 @@ namespace CyrelaServices.Model
         public int PjoEmpreendimentoId { get; set; }
 
         /// <summary>
-        /// Id do Bbloco
+        /// Id do Bloco
         /// </summary>
         [Column("PJOBLOCOID")]
         [Range(1, int.MaxValue, ErrorMessage = "O valor para {0} não pode ser menor ou igual a zero.")]

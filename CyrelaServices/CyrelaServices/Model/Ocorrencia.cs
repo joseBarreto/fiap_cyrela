@@ -6,7 +6,7 @@ namespace CyrelaServices.Model
 {
 
     /// <summary>
-    /// Ocorrencia
+    /// Ocorrência
     /// </summary>
     [Table("T_CYRELA_OCORRENCIA")]
     public class Ocorrencia : BaseEntity

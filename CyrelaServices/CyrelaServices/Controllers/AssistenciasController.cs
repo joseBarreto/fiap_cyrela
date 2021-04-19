@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CyrelaServices.Controllers
 {
     /// <summary>
-    /// Assistencias
+    /// Assistências
     /// </summary>
     [ApiController]
     [Route("[controller]")]
@@ -29,7 +29,7 @@ namespace CyrelaServices.Controllers
         /// <summary>
         /// Retorna todos os registros paginados
         /// </summary>
-        /// <param name="baseParametersPagination">Parametros da paginação: PageSize; PageIndex</param>
+        /// <param name="baseParametersPagination">Parâmetros da paginação: PageSize; PageIndex</param>
         /// <returns></returns>
         [SwaggerResponse(200, "Ok", typeof(PaginatedList<Assistencia>))]
         [SwaggerResponse(400, "Bad Request", typeof(string))]

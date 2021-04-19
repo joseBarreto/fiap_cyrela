@@ -27,7 +27,7 @@ namespace CyrelaServices
         {
 
             services.AddDbContext<CyrelaServicesContext>(options => options.UseOracle(Configuration.GetConnectionString("CyrelaServicesContext")));
-
+            
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -36,7 +36,7 @@ namespace CyrelaServices
                 {
                     Version = "v1",
                     Title = "Cyrela Services",
-                    Description = "API para controle de Assitencias e Ocorrencias",
+                    Description = "API para controle de Assistências e Ocorrências",
                     TermsOfService = new Uri(Configuration.GetSection("TermsOfService").Value),
                     Contact = new OpenApiContact
                     {
