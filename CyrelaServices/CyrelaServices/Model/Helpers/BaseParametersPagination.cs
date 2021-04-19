@@ -11,7 +11,7 @@ namespace CyrelaServices.Model.Helpers
         /// <summary>
         /// Maior valor que a paginação pode assumir
         /// </summary>
-        public const int MaxPageSize = 100;
+        public const int MaxPageSize = 100; 
 
         /// <summary>
         /// Pagina atual
