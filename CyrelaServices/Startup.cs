@@ -36,7 +36,7 @@ namespace CyrelaServices
                 {
                     Version = "v1",
                     Title = "Cyrela Services",
-                    Description = "API para controle de Assistências e Ocorrências",
+                    Description = "API para controle de Assist&#519;ncias e Ocorr&#519;ncias",
                     TermsOfService = new Uri(Configuration.GetSection("TermsOfService").Value),
                     Contact = new OpenApiContact
                     {
