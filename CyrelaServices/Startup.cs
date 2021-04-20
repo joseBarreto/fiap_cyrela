@@ -28,6 +28,7 @@ namespace CyrelaServices
             services.AddDbContext<CyrelaServicesContext>(options => options.UseOracle(Configuration.GetConnectionString("CyrelaServicesContext")));
 
             services.AddControllers();
+            services.AddSwaggerGen();
 
             //services.AddSwaggerGen(c =>
             //{
@@ -61,6 +62,15 @@ namespace CyrelaServices
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cyrela Services V1");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -77,12 +87,7 @@ namespace CyrelaServices
                 endpoints.MapControllers();
             });
 
-            //app.UseSwagger();
-
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cyrela Services V1");
-            //});
+            
         }
     }
 
