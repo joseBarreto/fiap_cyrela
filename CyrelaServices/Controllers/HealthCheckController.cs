@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CyrelaServices.DAL.Context;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace CyrelaServices.Controllers
 {
@@ -10,6 +13,17 @@ namespace CyrelaServices.Controllers
     [ApiExplorerSettings(IgnoreApi = true)]
     public class HealthCheckController : ControllerBase
     {
+        private readonly CyrelaServicesContext _context;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        public HealthCheckController(CyrelaServicesContext context)
+        {
+            _context = context;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -17,7 +31,17 @@ namespace CyrelaServices.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok();
+            try
+            {
+                _ = _context.Assistencia.FirstOrDefault();
+                _ = _context.Ocorrencia.FirstOrDefault();
+                return Ok("Banco ok");
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.ToString());
+
+            }
         }
     }
 }
