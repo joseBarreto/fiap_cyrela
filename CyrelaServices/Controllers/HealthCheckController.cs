@@ -1,7 +1,6 @@
 ﻿using CyrelaServices.DAL.Context;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Configuration;
 using System.Linq;
 
 namespace CyrelaServices.Controllers
@@ -34,10 +33,9 @@ namespace CyrelaServices.Controllers
         {
             try
             {
-                //_ = _context.Assistencia.FirstOrDefault();
-                //_ = _context.Ocorrencia.FirstOrDefault();
-                var a = _context.ConnectionString;
-                return Ok(a);
+                _ = _context.Assistencia.FirstOrDefault();
+                _ = _context.Ocorrencia.FirstOrDefault();
+                return Ok();
             }
             catch (System.Exception ex)
             {
