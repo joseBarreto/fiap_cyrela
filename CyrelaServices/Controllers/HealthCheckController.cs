@@ -34,10 +34,10 @@ namespace CyrelaServices.Controllers
         {
             try
             {
-                _ = _context.Assistencia.FirstOrDefault();
-                _ = _context.Ocorrencia.FirstOrDefault();
+                //_ = _context.Assistencia.FirstOrDefault();
+                //_ = _context.Ocorrencia.FirstOrDefault();
                 var a = _context.ConnectionString;
-                return Ok("Banco ok: " + a);
+                return Ok(a);
             }
             catch (System.Exception ex)
             {
