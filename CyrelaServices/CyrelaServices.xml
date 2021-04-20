@@ -55,6 +55,12 @@
             
             </summary>
         </member>
+        <member name="M:CyrelaServices.Controllers.HealthCheckController.#ctor(CyrelaServices.DAL.Context.CyrelaServicesContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="M:CyrelaServices.Controllers.HealthCheckController.Index">
             <summary>
             
