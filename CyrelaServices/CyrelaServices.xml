@@ -50,6 +50,22 @@
             <param name="id">Identificador do registro</param>
             <returns></returns>
         </member>
+        <member name="T:CyrelaServices.Controllers.HealthCheckController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CyrelaServices.Controllers.HealthCheckController.Index">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CyrelaServices.Controllers.HomeController">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:CyrelaServices.Controllers.HomeController.Index">
             <summary>
             
