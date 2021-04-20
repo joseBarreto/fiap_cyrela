@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CyrelaServices</name>
+    </assembly>
+    <members>
+        <member name="T:CyrelaServices.Controllers.AssistenciasController">
+            <summary>
+            Assistências
+            </summary>
+        </member>
+        <member name="M:CyrelaServices.Controllers.AssistenciasController.#ctor(CyrelaServices.DAL.Context.CyrelaServicesContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:CyrelaServices.Controllers.AssistenciasController.GetAll(CyrelaServices.Model.Helpers.BaseParametersPagination)">
+            <summary>
+            Retorna todos os registros paginados
+            </summary>
+            <param name="baseParametersPagination">Parâmetros da paginação: PageSize; PageIndex</param>
+            <returns></returns>
+        </member>
+        <member name="M:CyrelaServices.Controllers.AssistenciasController.GetById(System.Int32)">
+            <summary>
+            Retorna um registro com base no identificador
+            </summary>
+            <param name="id">Identificador</param>
+            <returns></returns>
+        </member>
+        <member name="M:CyrelaServices.Controllers.AssistenciasController.Insert(CyrelaServices.Model.Assistencia)">
+            <summary>
+            Insere um novo registro
+            </summary>
+            <param name="assistencia">Modelo para inserção</param>
+            <returns></returns>
+        </member>
+        <member name="M:CyrelaServices.Controllers.AssistenciasController.Update(CyrelaServices.Model.Assistencia)">
+            <summary>
+            Atualizar um registro
+            </summary>
+            <param name="assistencia">Modelo para atualização</param>
+            <returns></returns>
+        </member>
+        <member name="M:CyrelaServices.Controllers.AssistenciasController.Delete(System.Int32)">
+            <summary>
+            Remove um registro
+            </summary>
+            <param name="id">Identificador do registro</param>
+            <returns></returns>
+        </member>
+        <member name="T:CyrelaServices.Controllers.OcorrenciasController">
+            <summary>
+            Ocorrências
+            </summary>
+        </member>
+        <member name="M:CyrelaServices.Controllers.OcorrenciasController.#ctor(CyrelaServices.DAL.Context.CyrelaServicesContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:CyrelaServices.Controllers.OcorrenciasController.GetAll(CyrelaServices.Model.Helpers.BaseParametersPagination)">
+            <summary>
+            Retorna todos os registros paginados
+            </summary>
+            <param name="baseParametersPagination">Parâmetros da paginação: PageSize; PageIndex</param>
+            <returns></returns>
+        </member>
+        <member name="M:CyrelaServices.Controllers.OcorrenciasController.GetById(System.Int32)">
+            <summary>
+            Retorna um registro com base no identificador
+            </summary>
+            <param name="id">Identificador</param>
+            <returns></returns>
+        </member>
+        <member name="M:CyrelaServices.Controllers.OcorrenciasController.Insert(CyrelaServices.Model.Ocorrencia)">
+            <summary>
+            Insere um novo registro
+            </summary>
+            <param name="ocorrencia">Modelo para inserção</param>
+            <returns></returns>
+        </member>
+        <member name="M:CyrelaServices.Controllers.OcorrenciasController.Update(CyrelaServices.Model.Ocorrencia)">
+            <summary>
+            Atualizar um registro
+            </summary>
+            <param name="ocorrencia">Modelo para atualização</param>
+            <returns></returns>
+        </member>
+        <member name="M:CyrelaServices.Controllers.OcorrenciasController.Delete(System.Int32)">
+            <summary>
+            Remove um registro
+            </summary>
+            <param name="id">Identificador do registro</param>
+            <returns></returns>
+        </member>
+        <member name="T:CyrelaServices.DAL.Context.CyrelaServicesContext">
+            <summary>
+            Contexto do banco Oracle
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.DAL.Context.CyrelaServicesContext.Assistencia">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.DAL.Context.CyrelaServicesContext.Ocorrencia">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CyrelaServices.DAL.Context.CyrelaServicesContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{CyrelaServices.DAL.Context.CyrelaServicesContext})">
+            <summary>
+            Construtor
+            </summary>
+            <param name="options">DbContext para injeção</param>
+        </member>
+        <member name="T:CyrelaServices.Model.Assistencia">
+            <summary>
+            Assistência
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Assistencia.Actualstart">
+            <summary>
+            Data de inicio
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Assistencia.Actualend">
+            <summary>
+            Data de termino
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Assistencia.PjoTipodeAtividade">
+            <summary>
+            Tipo de atividade
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Assistencia.Subject">
+            <summary>
+            Assunto
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Assistencia.PjoEmpreendimentoId">
+            <summary>
+            Id do empreendimento 
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Assistencia.PjoBlocoId">
+            <summary>
+            Id do Bloco
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Assistencia.PjoUnidadeId">
+            <summary>
+            Id da unidade
+            </summary>
+        </member>
+        <member name="T:CyrelaServices.Model.BaseEntity">
+            <summary>
+            Dados comuns entre as Entidades
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.BaseEntity.Id">
+            <summary>
+            Identificador
+            </summary>
+        </member>
+        <member name="T:CyrelaServices.Model.Helpers.BaseParametersPagination">
+            <summary>
+            Parâmetros da paginação
+            </summary>
+        </member>
+        <member name="F:CyrelaServices.Model.Helpers.BaseParametersPagination.MaxPageSize">
+            <summary>
+            Maior valor que a paginação pode assumir
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Helpers.BaseParametersPagination.PageIndex">
+            <summary>
+            Pagina atual
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Helpers.BaseParametersPagination.PageSize">
+            <summary>
+            Tamanho de itens por pagina
+            </summary>
+        </member>
+        <member name="T:CyrelaServices.Model.Helpers.PaginatedList`1">
+            <summary>
+            Paginação padrão
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:CyrelaServices.Model.Helpers.PaginatedList`1.PageIndex">
+            <summary>
+            Pagina atual
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Helpers.PaginatedList`1.TotalPages">
+            <summary>
+            Total de paginas
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Helpers.PaginatedList`1.HasPreviousPage">
+            <summary>
+            Se existe anterior
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Helpers.PaginatedList`1.HasNextPage">
+            <summary>
+            Se existe uma pagina a frente
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Helpers.PaginatedList`1.TotalRecords">
+            <summary>
+            Total de registros
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Helpers.PaginatedList`1.Records">
+            <summary>
+            Registros 
+            </summary>
+        </member>
+        <member name="M:CyrelaServices.Model.Helpers.PaginatedList`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Cria uma paginação padrão
+            </summary>
+            <param name="items">Lista de objetos a serem paginados</param>
+            <param name="count">Total de registros</param>
+            <param name="pageIndex">Índice da pagina atual</param>
+            <param name="pageSize">Tamanho das paginas</param>
+        </member>
+        <member name="M:CyrelaServices.Model.Helpers.PaginatedList`1.CreateAsync(System.Linq.IQueryable{`0},CyrelaServices.Model.Helpers.BaseParametersPagination)">
+            <summary>
+            Cria uma nova paginação a partir de um IQuerable
+            </summary>
+            <param name="source">Consulta a ser realizada</param>
+            <param name="baseParametersPagination">Parâmetros da paginação: PageSize; PageIndex</param>
+            <returns></returns>
+        </member>
+        <member name="T:CyrelaServices.Model.Ocorrencia">
+            <summary>
+            Ocorrência
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Ocorrencia.PjoClientedaunidade">
+            <summary>
+            Cliente da Unidade
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Ocorrencia.PjoEmpreendimentoid">
+            <summary>
+            Empreendimento
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Ocorrencia.PjoBloco">
+            <summary>
+            Bloco
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Ocorrencia.PjoUnidade">
+            <summary>
+            Unidade
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Ocorrencia.PjoBandeira">
+            <summary>
+            Bandeira
+            </summary>
+        </member>
+        <member name="P:CyrelaServices.Model.Ocorrencia.Description">
+            <summary>
+            Descrição
+            </summary>
+        </member>
+    </members>
+</doc>
