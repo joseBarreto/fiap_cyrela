@@ -27,7 +27,7 @@ namespace CyrelaServices
         {
 
             services.AddDbContext<CyrelaServicesContext>(options => options.UseOracle(Configuration.GetConnectionString("CyrelaServicesContext")));
-            
+
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -50,10 +50,6 @@ namespace CyrelaServices
                 {
                     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-
-                    Console.WriteLine("xmlFile: " + xmlFile);
-                    Console.WriteLine("xmlPath: " + xmlPath);
-
                     c.IncludeXmlComments(xmlPath);
                 }
                 catch (Exception)
