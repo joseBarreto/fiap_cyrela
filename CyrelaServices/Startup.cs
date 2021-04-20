@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
@@ -30,33 +29,33 @@ namespace CyrelaServices
 
             services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Version = "v1",
-                    Title = "Cyrela Services",
-                    Description = "API para controle de Assistências e Ocorrências",
-                    TermsOfService = new Uri(Configuration.GetSection("TermsOfService").Value),
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Suporte Cyrela",
-                        Email = string.Empty,
-                        Url = new Uri(Configuration.GetSection("ContactUrl").Value),
-                    }
-                });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo
+            //    {
+            //        Version = "v1",
+            //        Title = "Cyrela Services",
+            //        Description = "API para controle de Assistências e Ocorrências",
+            //        TermsOfService = new Uri(Configuration.GetSection("TermsOfService").Value),
+            //        Contact = new OpenApiContact
+            //        {
+            //            Name = "Suporte Cyrela",
+            //            Email = string.Empty,
+            //            Url = new Uri(Configuration.GetSection("ContactUrl").Value),
+            //        }
+            //    });
 
-                try
-                {
-                    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                    c.IncludeXmlComments(xmlPath);
-                }
-                catch (Exception)
-                {
-                    //
-                }
-            });
+            //    try
+            //    {
+            //        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            //        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            //        c.IncludeXmlComments(xmlPath);
+            //    }
+            //    catch (Exception)
+            //    {
+            //        //
+            //    }
+            //});
 
         }
 
@@ -78,12 +77,12 @@ namespace CyrelaServices
                 endpoints.MapControllers();
             });
 
-            app.UseSwagger();
+            //app.UseSwagger();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cyrela Services V1");
-            });
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cyrela Services V1");
+            //});
         }
     }
 
