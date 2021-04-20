@@ -3,6 +3,7 @@ using CyrelaServices.Model;
 using CyrelaServices.Model.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Threading.Tasks;
 
 namespace CyrelaServices.Controllers
@@ -30,8 +31,8 @@ namespace CyrelaServices.Controllers
         /// </summary>
         /// <param name="baseParametersPagination">Parâmetros da paginação: PageSize; PageIndex</param>
         /// <returns></returns>
-        ////[SwaggerResponse(200, "Ok", typeof(PaginatedList<Assistencia>))]
-        //[SwaggerResponse(400, "Bad Request", typeof(string))]
+        [SwaggerResponse(200, "Ok", typeof(PaginatedList<Assistencia>))]
+        [SwaggerResponse(400, "Bad Request", typeof(string))]
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] BaseParametersPagination baseParametersPagination)
         {
@@ -43,10 +44,10 @@ namespace CyrelaServices.Controllers
         /// </summary>
         /// <param name="id">Identificador</param>
         /// <returns></returns>
-        //[SwaggerResponse(200, "Ok", typeof(Assistencia))]
-        //[SwaggerResponse(400, "Bad Request", typeof(string))]
-        //[SwaggerResponse(404, "Not Found", typeof(string))]
-        //[SwaggerResponse(500, "Internal Server error", typeof(string))]
+        [SwaggerResponse(200, "Ok", typeof(Assistencia))]
+        [SwaggerResponse(400, "Bad Request", typeof(string))]
+        [SwaggerResponse(404, "Not Found", typeof(string))]
+        [SwaggerResponse(500, "Internal Server error", typeof(string))]
         [HttpGet]
         [Route("GetById")]
         public async Task<IActionResult> GetById([FromQuery] int id)
@@ -65,9 +66,9 @@ namespace CyrelaServices.Controllers
         /// </summary>
         /// <param name="assistencia">Modelo para inserção</param>
         /// <returns></returns>
-        //[SwaggerResponse(200, "Ok", typeof(Assistencia))]
-        //[SwaggerResponse(400, "Bad Request", typeof(string))]
-        //[SwaggerResponse(500, "Internal Server error", typeof(string))]
+        [SwaggerResponse(200, "Ok", typeof(Assistencia))]
+        [SwaggerResponse(400, "Bad Request", typeof(string))]
+        [SwaggerResponse(500, "Internal Server error", typeof(string))]
         [HttpPost]
         public IActionResult Insert([FromBody] Model.Assistencia assistencia)
         {
@@ -81,10 +82,10 @@ namespace CyrelaServices.Controllers
         /// </summary>
         /// <param name="assistencia">Modelo para atualização</param>
         /// <returns></returns>
-        //[SwaggerResponse(200, "Ok", typeof(Assistencia))]
-        //[SwaggerResponse(400, "Bad Request", typeof(string))]
-        //[SwaggerResponse(404, "Not Found", typeof(string))]
-        //[SwaggerResponse(500, "Internal Server error", typeof(string))]
+        [SwaggerResponse(200, "Ok", typeof(Assistencia))]
+        [SwaggerResponse(400, "Bad Request", typeof(string))]
+        [SwaggerResponse(404, "Not Found", typeof(string))]
+        [SwaggerResponse(500, "Internal Server error", typeof(string))]
         [HttpPut]
         public IActionResult Update([FromBody] Model.Assistencia assistencia)
         {
@@ -106,10 +107,10 @@ namespace CyrelaServices.Controllers
         /// </summary>
         /// <param name="id">Identificador do registro</param>
         /// <returns></returns>
-        //[SwaggerResponse(200, "Ok", typeof(Assistencia))]
-        //[SwaggerResponse(400, "Bad Request", typeof(string))]
-        //[SwaggerResponse(404, "Not Found", typeof(string))]
-        //[SwaggerResponse(500, "Internal Server error", typeof(string))]
+        [SwaggerResponse(200, "Ok", typeof(Assistencia))]
+        [SwaggerResponse(400, "Bad Request", typeof(string))]
+        [SwaggerResponse(404, "Not Found", typeof(string))]
+        [SwaggerResponse(500, "Internal Server error", typeof(string))]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

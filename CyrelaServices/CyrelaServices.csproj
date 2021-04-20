@@ -6,13 +6,23 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<DocumentationFile></DocumentationFile>
+		<DocumentationFile>.\CyrelaServices.xml</DocumentationFile>
 		<WarningLevel>5</WarningLevel>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<DocumentationFile></DocumentationFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="CyrelaServices.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="CyrelaServices.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.13" />

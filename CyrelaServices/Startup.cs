@@ -46,16 +46,10 @@ namespace CyrelaServices
                     }
                 });
 
-                try
-                {
-                    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                    c.IncludeXmlComments(xmlPath);
-                }
-                catch (Exception)
-                {
-                    //
-                }
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+
             });
 
         }
@@ -87,7 +81,7 @@ namespace CyrelaServices
                 endpoints.MapControllers();
             });
 
-            
+
         }
     }
 
